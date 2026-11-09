@@ -1,70 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:background="#FFF8F6"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
+    <!-- Gallery Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="My Little Gallery"
+        android:textColor="#754D5A"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="24dp"
+        android:text="A lovely place for your favorite memories."
+        android:textColor="#AA8793"
+        android:textSize="13sp" />
+
+    <!-- Main Action Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_load"
             android:layout_width="0dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="동기화" />
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="#D68FA7"
+            android:text="Refresh"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:text="새로운 이미지 게시" />
+            android:layout_marginStart="7dp"
+            android:backgroundTint="#D68FA7"
+            android:text="Upload Photo"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
+    <!-- Search Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Find a memory"
+        android:textColor="#754D5A"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search posts by title..."
+        android:layout_height="54dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#D68FA7"
+        android:hint="Search photos by title..."
         android:inputType="text"
+        android:padding="14dp"
         android:singleLine="true"
-        android:padding="12dp" />
+        android:textColor="#754D5A"
+        android:textColorHint="#B99DA6"
+        android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/btnSort"
+    <!-- Gallery Controls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sort: Newest First"
-        android:textAllCaps="false" />
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnViewMode"
+        <Button
+            android:id="@+id/btnSort"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="7dp"
+            android:backgroundTint="#F5DDE5"
+            android:text="Latest First"
+            android:textAllCaps="false"
+            android:textColor="#754D5A"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnViewMode"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="7dp"
+            android:backgroundTint="#F5DDE5"
+            android:text="Grid View"
+            android:textAllCaps="false"
+            android:textColor="#754D5A"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- Gallery Section Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch to Grid View"
-        android:textAllCaps="false" />
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Your Collection"
+            android:textColor="#754D5A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♡"
+            android:textColor="#D68FA7"
+            android:textSize="26sp" />
+
+    </LinearLayout>
+
+    <!-- Existing Status / Post Count -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PhotoViewer"
-        android:textSize="18sp"
-        android:padding="8dp" />
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#FCE9EE"
+        android:padding="10dp"
+        android:text="Your photos will appear here"
+        android:textColor="#94717D"
+        android:textSize="14sp" />
 
+    <!-- Existing Posts -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
 
 </LinearLayout>

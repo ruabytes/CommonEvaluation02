@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     Uri selectedImageUri;
     // Django Server URL
 
-    String site_url = "https://ruabytes.pythonanywhere.com";
+    String site_url = "http://127.0.0.1:8000";
 
     JSONObject post_json;
     String imageUrl = null;
